@@ -43,7 +43,7 @@ export class CategoryApiService {
       ),
     );
     if (image) {
-      formData.append('file', image,);
+      formData.append('file', image);
     }
 
     return this.http.put<Category>(`${this.categoryURL}/${id}`, formData);
@@ -55,7 +55,7 @@ export class CategoryApiService {
 
   search(name: string): Observable<Category[]> {
     const params = new HttpParams().set('name', name);
-    return this.http.get<Category[]>(`${this.categoryURL}`, {params})
+    return this.http.get<Category[]>(`${this.categoryURL}/search`, {params})
   }
 
 }
