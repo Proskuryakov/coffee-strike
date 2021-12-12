@@ -7,12 +7,14 @@ import { MainPage } from './routed/pages/main/main.page';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CategoryPage } from './routed/pages/category/category.page';
+import { DrinkPage } from './routed/pages/drink/drink.page';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPage,
-    CategoryPage
+    CategoryPage,
+    DrinkPage
   ],
   imports: [
     HttpClientModule,
