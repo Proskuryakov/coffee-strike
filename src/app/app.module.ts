@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { MainPage } from './routed/pages/main/main.page';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CategoryPage } from './routed/pages/category/category.page';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPage
+    MainPage,
+    CategoryPage
   ],
   imports: [
     HttpClientModule,
