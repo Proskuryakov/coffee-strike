@@ -33,3 +33,25 @@
 
 
 </nav>
+
+
+<div class="uk-container"><div>
+
+  <div data-uk-grid="" class="uk-grid uk-flex uk-flex-center uk-flex-middle">
+
+    <div *ngFor="let drink of drinks" class="uk-width-1-3@m uk-width-1-2@s">
+      <div (click)="goToDrink(drink)">
+
+        <div class="uk-card uk-card-small uk-card-default uk-card-hover">
+          <div class="uk-card-body uk-text-center">
+            <img class="uk-border-rounded" src="{{drink.imageLink}}" alt="">
+            <span class="uk-text-lead">{{drink.name}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div></div>

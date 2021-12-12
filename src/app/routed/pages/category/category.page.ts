@@ -35,7 +35,10 @@ export class CategoryPage implements OnInit {
       }),
       switchMap((id) => this.categoryService.getById(id))
     ).subscribe(
-      (category) => this.selectedCategory = category,
+      (category) => {
+        this.selectedCategory = category
+        this.loadDrinks();
+      },
       (ex) => {
         console.log(ex);
         this.router.navigate(['/']);
@@ -43,8 +46,25 @@ export class CategoryPage implements OnInit {
     );
   }
 
+  loadDrinks(): void {
+    this.drinkService.getAllByCategory(this.selectedCategory!.id).subscribe(
+      (d) => this.drinks = d,
+      (error) => console.log(error)
+    );
+  }
 
-  searchDrink() {
-    console.log("search");
+  searchDrink(): void {
+    if (this.searchText.trim() === '') {
+      this.loadDrinks();
+    }else {
+      this.drinkService.search(this.selectedCategory!.id, this.searchText).subscribe(
+        (d) => this.drinks = d,
+        (error) => console.log(error)
+      );
+    }
+  }
+
+  goToDrink(drink: Drink): void {
+    this.router.navigate(['/drink', drink.id]);
   }
 }
