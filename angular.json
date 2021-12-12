@@ -31,9 +31,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/uikit/dist/css/uikit.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/uikit/dist/js/uikit.js",
+              "node_modules/uikit/dist/js/uikit-icons.js"
+            ]
           },
           "configurations": {
             "production": {

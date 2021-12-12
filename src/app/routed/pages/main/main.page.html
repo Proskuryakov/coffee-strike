@@ -1,0 +1,56 @@
+<nav class="uk-navbar-container uk-margin" uk-navbar>
+  <div class="uk-navbar-center">
+
+    <div class="uk-navbar-center-left"><div>
+      <ul class="uk-navbar-nav">
+        <li><a href="/">Рецепты</a></li>
+      </ul>
+    </div></div>
+
+    <a class="uk-navbar-item uk-logo uk-disabled">CoffeeStrike</a>
+
+    <div class="uk-navbar-center-right"><div>
+      <ul class="uk-navbar-nav">
+        <li><a href="#">Вход</a></li>
+      </ul>
+    </div></div>
+
+  </div>
+
+  <div class="uk-navbar-right">
+
+    <div>
+      <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+      <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+        <form class="uk-search uk-search-navbar uk-width-1-1">
+          <input [(ngModel)]="searchText" (ngModelChange)="searchCategories()"
+                 class="uk-search-input" type="search" name="search" placeholder="Поиск..." autofocus>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+</nav>
+
+<div class="uk-container"><div>
+
+  <div data-uk-grid="" class="uk-grid uk-flex uk-flex-center uk-flex-middle">
+
+    <div *ngFor="let category of categories" class="uk-width-1-3@m uk-width-1-2@s">
+      <div >
+
+        <div class="uk-card uk-card-small uk-card-default uk-card-hover">
+          <div class="uk-card-body uk-text-center">
+            <img class="uk-border-rounded" src="{{category.imageLink}}" alt="">
+            <span class="uk-text-lead">{{category.name}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+
+</div></div>
